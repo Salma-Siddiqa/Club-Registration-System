@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="glow-title">Select Clubs</h1>
+
+<form method="POST" class="club-form">
+
+    {% for club in clubs %}
+        <div class="club-row">
+            <input type="checkbox" name="clubs" value="{{ club }}">
+            <label>{{ club }}</label>
+        </div>
+    {% endfor %}
+
+    <br>
+    <button type="submit">Join Clubs</button>
+</form>
+
+<br>
+<a href="/logout">Logout</a>
+
+{% endblock %}

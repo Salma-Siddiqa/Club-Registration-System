@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="glow-title">ADMIN PANEL</h1>
+
+<h2 class="white-heading">Club Member Count</h2>
+
+{% for club, count in data %}
+    <p>{{ club }} : {{ count }}</p>
+{% endfor %}
+
+<br>
+<a href="/admin_members">Manage Members</a>
+<a href="/logout">Logout</a>
+
+{% endblock %}

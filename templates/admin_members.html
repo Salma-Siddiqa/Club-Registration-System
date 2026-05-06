@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="glow-title">Manage Members</h1>
+
+<h2 class="white-heading">All Members</h2>
+
+{% for member in members %}
+    <p>
+        {{ member[1] }} - {{ member[2] }}
+        <a href="/admin_delete/{{ member[0] }}">Delete</a>
+    </p>
+{% endfor %}
+
+<hr>
+
+<h2 class="white-heading">Add Member</h2>
+
+<form method="POST" action="/admin_add">
+    <input type="text" name="username" placeholder="Username" required><br>
+    <input type="text" name="clubname" placeholder="Club Name" required><br>
+    <button type="submit">Add Member</button>
+</form>
+
+<br>
+<a href="/admin">Back</a>
+
+{% endblock %}
